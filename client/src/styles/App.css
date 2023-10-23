@@ -1,0 +1,231 @@
+
+.btn.btn-secondary.btn-active,
+.btn.btn-secondary:focus {
+  background:  #c7ddcc !important;
+  color: black !important;
+}
+
+.btn.btn-outline-secondary:hover {
+  background: #c7ddcc !important;
+  color: black !important;
+}
+
+.movie-column, .seat-column, .slot-column {
+    display: inline-block;
+    margin: 5px;
+    color: rgb(0, 0, 0);
+    border: 1px rgb(0, 0, 0) ridge;
+    padding: 10px 15px;
+    line-height: 1px;
+    border-radius: 5px;
+    /* box-shadow: 0 0 5px 5px; */
+}
+
+.wrapper_container{
+    margin-left: 45px !important;
+}
+
+.mainWrapper {
+    margin: 0px 25px !important;
+    border: 2px solid #222831;
+    padding: 59px 12px 59px 25px;
+    width: 94%;
+    border-radius: 20px;
+    background-color: #EEEEEE;
+}
+
+.movie-row, .seat-row, .slot-row {
+    border-radius: 10px;
+    border: 1px black ridge;
+    padding: 10px;
+    margin-bottom: 10px;
+    ;
+}
+
+.seat-column {
+    min-width: 100px;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.book-button button {
+    text-align: center;
+    border-radius: 10px;
+    font-size: 1em;
+    color: white;
+    background: rgb(44, 209, 88);
+    background: -moz-linear-gradient(233deg, rgba(44, 209, 88, 1) 0%, rgba(44, 108, 224, 1) 100%);
+    background: -webkit-linear-gradient(233deg, rgba(44, 209, 88, 1) 0%, rgba(44, 108, 224, 1) 100%);
+    background: linear-gradient(233deg, rgba(44, 209, 88, 1) 0%, rgba(44, 108, 224, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2cd158", endColorstr="#2c6ce0", GradientType=1);
+    padding: 5px 15px;
+    font-weight: 500;
+}
+
+.movie-column-selected, .seat-column-selected, .slot-column-selected {
+    background: rgb(211, 115, 115);
+    /* box-shadow: 0 0 5px 5px; */
+}
+
+input {
+    width: 50px;
+    border-color: rgb(196, 196, 196);
+    border-width: 1px;
+}
+
+.last-order {
+    border-radius: 10px;
+    border: 1px black ridge;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    ;
+}
+
+
+  .active-btn{
+    background-color: #d37373 !important;
+    
+  } 
+
+  .text-center {
+    width: 100%;
+    position: relative;
+    height: 100%;
+}
+
+.spinner-border {
+    display: block;
+    position: fixed;
+    top: calc(50% - (58px / 2));  
+    right: calc(50% - (58px / 2));
+    color: red;
+}
+
+#backdrop {
+  position:absolute;
+  top:0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  background-color: rgb(0,0,0,0.2);
+}
+
+.LastBooking{
+    border: 1px solid #222831;
+    border-radius: 7px;
+    padding: 12px;
+    width: 310px;
+    height: auto;
+    display: grid;
+}
+
+.ContainerStyle{
+    border: 1px solid #222831;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.ContainerHeading {
+    color: #393E46;
+}
+
+.ContainerStyle, .LastBooking {
+    background-color: rgb(251, 251, 251);
+}
+
+.ContainerStyle .btnSelecter {
+    background-color: #ffffff;
+}
+.selectorWrapper{
+    display: flex;
+    padding: 19px 0px;
+}
+
+.seatWrapper{
+    border: 1px solid black;
+    margin: 0px 14px 10px 4px;
+    border-radius: 8px;
+    padding: 10px 0px 10px 21px;
+    width: 116px;
+}
+
+.BookingButton{
+
+    background: #B73225;
+    font-weight: 600;
+    border-radius: 4px;
+    box-shadow: none;
+    border: none !important;
+    padding: 5px 15px;
+    color: whitesmoke;
+
+
+}
+
+.spinnerWrapper{
+    position: absolute;
+    left: 139px;
+    top: -2px;
+}
+
+
+.booking_seat_sp {
+    font-weight: 500;
+}
+.heading_details{
+    font-weight: 600;
+}
+
+.name_movie{
+    color : green;
+    font-weight:600;
+
+}
+
+
+.seat_b {
+    font-weight: 600;
+    color:green;
+}
+
+.error_msg {
+    color:#ff7043;
+    font-weight: 500;
+}
+
+
+  .seatWrapper:focus-within {
+    background-color: #c7ddcc;
+    color:black;
+  }
+
+  .booked_seat_wrapper {
+    border-radius: 7px;
+    padding: 12px 25px;
+    width: 173px;
+    margin-left: 52px;
+    margin-bottom: 10px;
+    
+  }
+
+  .seat_booked {
+    font-weight: 600;
+    padding: 4px 20px;
+    margin: 7px 10px;
+    border-radius: 4px;
+    display: flex;
+    width: 55px;
+}
+
+
+.btnSelecter {
+    font-size: 16px !important;
+    padding: 15px 10px !important;
+}
+
+.modal-content{
+    border: 0px solid !important;
+} 
