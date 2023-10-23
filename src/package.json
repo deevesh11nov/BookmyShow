@@ -1,7 +1,7 @@
 {
-  "name": "node-server-testing",
+  "name": "bookmy-show-node-server-testing",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a movie ticket booking application",
   "main": "index.js",
   "scripts": {
     "test": "mocha '__tests__/*.test.js' --reporter mochawesome --recursive  --timeout 60000 --exit",
@@ -9,7 +9,7 @@
     "start": "node ./index.js",
     "dev": "nodemon ./index.js"
   },
-  "author": "",
+  "author": "Sarvesh Kumar",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",

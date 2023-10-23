@@ -24,7 +24,6 @@ export default function LastBookingDetails(props) {
 {/* when last booking data is present and data fetching is finish*/}
       {lastBookingPresent && finishLoading && (
         <div>
-         
             <div className="heading_details">Seats:</div>
             <div className="booked_seat_wrapper">
             {/* map function for seat label */}
