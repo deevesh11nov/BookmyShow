@@ -11,7 +11,7 @@ const isProduction = () => {
   
 const mongoURI = isProduction() ? process.env.MONGODBLIVE: process.env.MONGODBURI;
 
-const { bookMovieSchema } = require('./schema')
+const { bookMovieSchema } = require('./MongooseSchema')
 
 
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })

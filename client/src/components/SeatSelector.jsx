@@ -6,13 +6,13 @@ import Row from 'react-bootstrap/Row';
 
 
 //container for seat 
-export default function SetSeatSelector(props) {
+export default function SeatSelector(props) {
     const {mainheading, items,seats, onchange,display,submitBooking} = props;
   return (
 
-    <><Container className="container-fluid ContainerStyle" style={{border:"none"}}>
+    <><Container className="container-main Container-Styling" style={{border:"none"}}>
       <Row>
-        <h4 className="ContainerHeading">{mainheading}</h4>
+        <h4 className="Container-Header">{mainheading}</h4>
         <ButtonGroup aria-label="Basic outlined example" style={{ display: "contents" }}>
 
           {/* map function is used for movie, time slot and seat container */}

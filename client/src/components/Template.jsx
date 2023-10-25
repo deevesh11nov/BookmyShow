@@ -1,17 +1,17 @@
-import axios from "../axiosConfig";
+import axios from "../axiosConfiguration";
 import { SnackbarProvider, enqueueSnackbar } from "notistack";
 import React, { useEffect, useState } from "react";
 import Alert from "react-bootstrap/Alert";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import LastBookingDetails from "./LastBookingDetails";
-import SelectContainer from "./SelectContainer";
-import SetSeatSelector from "./SetSeatSelector";
-import useLocalStorage from "./UseLocalStorage";
+import LastestTicketDetail from "./LastestTicketDetail";
+import ContainerSlected from "./ContainerSlected";
+import SeatSelector from "./SeatSelector";
+import LocalStorage from "./LocalStorage";
 import { movies, seats, slots } from "./data.js";
-import app_config from '../common'
-import BackdropLoader from "../components/BackdropLoader";
+import app_config from '../commonFile'
+import BackdropLoad from "./BackdropLoad";
 
 // validation on negative numbers for seat input
 function containesNegtiveVal(seats) {
@@ -46,11 +46,11 @@ const initialState = {
 
 export default function Template() {
   //state
-  const [state, setState] = useLocalStorage('state',initialState);
+  const [state, setState] = LocalStorage('state',initialState);
 
 
   //other state for last booking
-  const [lastBooking, setlastBooking] = useState({
+  const [LatestBooked, setLatestBooked] = useState({
     movie: "",
     timeSlots: "",
     dataPresent: false,
@@ -73,14 +73,14 @@ export default function Template() {
 console.log(app_config)
 
     //get api data
-    setlastBooking({ iSfinishLoading: false });
+    setLatestBooked({ iSfinishLoading: false });
     axios
       .get(app_config.get_bookings)
       .then((res) => {
         console.log(res);
         if (typeof res.data.message === "string") {
-          setlastBooking({
-            ...lastBooking,
+          setLatestBooked({
+            ...LatestBooked,
             error: res.data.message,
             iSfinishLoading: true,
             dataPresent: false,
@@ -88,8 +88,8 @@ console.log(app_config)
         } else if (res.data.data) {
           let { movie, slot, seats } = res.data.data;
 
-          setlastBooking({
-            ...lastBooking,
+          setLatestBooked({
+            ...LatestBooked,
             movie: movie,
             timeSlots: slot,
             dataPresent: true,
@@ -107,16 +107,16 @@ console.log(app_config)
 
          //// setState(initialState);
         } else {
-          setlastBooking({
-            ...lastBooking,
+          setLatestBooked({
+            ...LatestBooked,
             dataPresent: false,
             iSfinishLoading: true,
           });
         }
       })
       .catch((error) => {
-        setlastBooking({
-          ...lastBooking,
+        setLatestBooked({
+          ...LatestBooked,
           dataPresent: false,
           iSfinishLoading: true,
         });
@@ -151,8 +151,9 @@ console.log(app_config)
       ...state,
       seats: {
         ...state.seats,
-        [e.target.name]: e.target.value,
+        [e.target.name]: e.target.value,   
       },
+      
     });
   };
 
@@ -178,8 +179,8 @@ console.log(app_config)
     return;
   }
 
-  setlastBooking({
-    ...lastBooking,
+  setLatestBooked({
+    ...LatestBooked,
 
     isLoading: true,
 
@@ -203,8 +204,8 @@ console.log(app_config)
       .then((res) => {
         if (res.status === 200) {
           //set state in last bookings details
-          setlastBooking({
-            ...lastBooking,
+          setLatestBooked({
+            ...LatestBooked,
             movie: state.movie,
             timeSlots: state.timeSlots,
             dataPresent: true,
@@ -244,8 +245,8 @@ console.log(app_config)
         
       })
       .catch((error) => {
-        setlastBooking({
-          ...lastBooking,
+        setLatestBooked({
+          ...LatestBooked,
           isLoading: false,
         });
         console.log(error);
@@ -256,7 +257,7 @@ console.log(app_config)
   return (
    <Container>
    <SnackbarProvider />
-   <BackdropLoader show={lastBooking.isLoading} />
+   <BackdropLoad show={LatestBooked.isLoading} />
 
 {state.showSuccessAlert && (
   <Alert
@@ -280,7 +281,7 @@ console.log(app_config)
 {/* movie select container */}
     <Row >
       <Col md={8} lg={8} sm={8} xs={12}>
-      <SelectContainer
+      <ContainerSlected
             mainheading="Select Movie"
             items={movies}
             selectedValue={state.movie}
@@ -289,7 +290,7 @@ console.log(app_config)
           />
 
      {/* timeslots container */}
-       <SelectContainer
+       <ContainerSlected
             mainheading="Select Time Slot"
             items={slots}
             selectedValue={state.timeSlots}
@@ -298,7 +299,7 @@ console.log(app_config)
           />
 
           {/* seat container */}
-          <SetSeatSelector
+          <SeatSelector
             mainheading="Select Seats"
             type="number"
             items={seats}
@@ -312,13 +313,13 @@ console.log(app_config)
 
 {/* //last booking container */}
       <Col md={4} lg={4} sm={4} xs={12} className="text-center">
-      <LastBookingDetails
-            movieName={lastBooking.movie}
-            timing={lastBooking.timeSlots}
-            seat={lastBooking.seats}
-            lastBookingPresent={lastBooking.dataPresent}
-            finishLoading={lastBooking.iSfinishLoading}
-            errorMsg={lastBooking && lastBooking?.error}
+      <LastestTicketDetail
+            movieName={LatestBooked.movie}
+            timing={LatestBooked.timeSlots}
+            seat={LatestBooked.seats}
+            LatestBookedPresent={LatestBooked.dataPresent}
+            finishLoading={LatestBooked.iSfinishLoading}
+            errorMsg={LatestBooked && LatestBooked?.error}
           />
       </Col>
     </Row>

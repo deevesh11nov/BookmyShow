@@ -1,7 +1,7 @@
 import React from 'react';
 import { Spinner, Modal } from 'react-bootstrap';
 
-const BackdropLoader = ({ show }) => {
+const BackdropLoad = ({ show }) => {
     console.log
   return (
     <Modal
@@ -9,11 +9,11 @@ const BackdropLoader = ({ show }) => {
       backdrop="static"
       keyboard={false}
       centered
-      dialogClassName="backdrop-loader"
+      dialogClassName="backdroploader"
     >
       <Spinner animation="border"  variant="white" />
     </Modal>
   );
 };
 
-export default BackdropLoader;
+export default BackdropLoad;

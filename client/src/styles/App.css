@@ -1,11 +1,11 @@
 
-.btn.btn-secondary.btn-active,
-.btn.btn-secondary:focus {
+.button.btn-second.btn-Active,
+.button.btn-second:focus {
   background:  #c7ddcc !important;
   color: black !important;
 }
 
-.btn.btn-outline-secondary:hover {
+.button.btnoutline-second:hover {
   background: #c7ddcc !important;
   color: black !important;
 }
@@ -83,7 +83,7 @@ input {
 }
 
 
-  .active-btn{
+  .active-button{
     background-color: #d37373 !important;
     
   } 
@@ -111,7 +111,7 @@ input {
   background-color: rgb(0,0,0,0.2);
 }
 
-.LastBooking{
+.LatestBooked{
     border: 1px solid #222831;
     border-radius: 7px;
     padding: 12px;
@@ -120,7 +120,7 @@ input {
     display: grid;
 }
 
-.ContainerStyle{
+.Container-Styling{
     border: 1px solid #222831;
     border-radius: 10px;
     padding: 15px;
@@ -128,15 +128,15 @@ input {
     width: 100%;
 }
 
-.ContainerHeading {
+.Header-Container {
     color: #393E46;
 }
 
-.ContainerStyle, .LastBooking {
+.Container-Styling, .LatestBooked {
     background-color: rgb(251, 251, 251);
 }
 
-.ContainerStyle .btnSelecter {
+.Container-Styling .btn-Selecter {
     background-color: #ffffff;
 }
 .selectorWrapper{
@@ -172,26 +172,26 @@ input {
 }
 
 
-.booking_seat_sp {
+.booked-seat-p {
     font-weight: 500;
 }
-.heading_details{
+.Heading-Detail{
     font-weight: 600;
 }
 
-.name_movie{
+.Movie-Name{
     color : green;
     font-weight:600;
 
 }
 
 
-.seat_b {
+.Seat_B {
     font-weight: 600;
     color:green;
 }
 
-.error_msg {
+.Error_messages {
     color:#ff7043;
     font-weight: 500;
 }
@@ -202,7 +202,7 @@ input {
     color:black;
   }
 
-  .booked_seat_wrapper {
+  .book-seating-wrapper {
     border-radius: 7px;
     padding: 12px 25px;
     width: 173px;
@@ -211,7 +211,7 @@ input {
     
   }
 
-  .seat_booked {
+  .Seating-booking {
     font-weight: 600;
     padding: 4px 20px;
     margin: 7px 10px;
@@ -221,7 +221,7 @@ input {
 }
 
 
-.btnSelecter {
+.btn-Selecter {
     font-size: 16px !important;
     padding: 15px 10px !important;
 }
